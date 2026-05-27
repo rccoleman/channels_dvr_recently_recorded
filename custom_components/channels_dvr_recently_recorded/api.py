@@ -72,7 +72,7 @@ class ChannelsDVR:
         status_uri = f"http://{self.host}:{self.port}{STATUS_ENDPOINT}"
         status = await self.request_data(status_uri)
 
-        self._version = {VERSION: status[VERSION]}
+        self._version = status[VERSION]
 
     async def get_files(self):
         """Get the list of files from the server."""
