@@ -58,8 +58,6 @@ async def validate_input(data):
 class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for Channels DVR."""
 
-    CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_POLL
-
     async def _try_create_entry(self, data):
         data.update(await validate_input(data))
         self._abort_if_unique_id_configured()
