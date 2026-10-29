@@ -24,7 +24,7 @@ class ChannelsDVR:
         """Request content from a URI."""
         async with aiohttp.ClientSession() as session:
             try:
-                with async_timeout.timeout(8):
+                with async_timeout.timeout(20):
                     async with session.get(uri) as response:
                         return (
                             await response.content.read()
